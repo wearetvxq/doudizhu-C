@@ -1,0 +1,513 @@
+2020-12-25 15:48:11 listening on 8080  app.py main 26 
+2020-12-25 15:48:23 304 GET / (127.0.0.1) 5.24ms  web.py log_request 2106 
+2020-12-25 15:48:23 404 GET /static/s/deal.ogg (127.0.0.1) 0.76ms  web.py log_request 2106 
+2020-12-25 15:48:24 101 GET /ws (127.0.0.1) 0.37ms  web.py log_request 2106 
+2020-12-25 15:48:24 SOCKET[1] OPEN  socket.py open 53 
+2020-12-25 15:48:24 REQ[1]: [17, 1]  socket.py on_message 61 
+2020-12-25 15:48:24 玩家进入 下一步  19 -1  socket.py on_message 75 
+2020-12-25 15:48:24 同时创建房间,并且运行机器人加入  socket.py on_message 77 
+2020-12-25 15:48:24 RSP[1]: [<Protocol.RSP_JOIN_ROOM: 18>, []]  socket.py write_message 150 
+2020-12-25 15:48:24 REQ[1]: [19, -1]  socket.py on_message 61 
+2020-12-25 15:48:24 From /home/sc/anaconda3/envs/doudizhu/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.  deprecation.py new_func 323 
+2020-12-25 15:48:27 Graph was finalized.  monitored_session.py finalize 222 
+2020-12-25 15:48:28 Running local_init_op.  session_manager.py _try_run_local_init_op 491 
+2020-12-25 15:48:28 Done running local_init_op.  session_manager.py _try_run_local_init_op 493 
+2020-12-25 15:48:28 From /home/sc/anaconda3/envs/doudizhu/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.  deprecation.py new_func 323 
+2020-12-25 15:48:28 Restoring parameters from ./core/res/model-302500  saver.py restore 1270 
+2020-12-25 15:48:31 Graph was finalized.  monitored_session.py finalize 222 
+2020-12-25 15:48:31 Running local_init_op.  session_manager.py _try_run_local_init_op 491 
+2020-12-25 15:48:31 Done running local_init_op.  session_manager.py _try_run_local_init_op 493 
+2020-12-25 15:48:31 Restoring parameters from ./core/res/model-302500  saver.py restore 1270 
+2020-12-25 15:48:34 Graph was finalized.  monitored_session.py finalize 222 
+2020-12-25 15:48:35 Running local_init_op.  session_manager.py _try_run_local_init_op 491 
+2020-12-25 15:48:35 Done running local_init_op.  session_manager.py _try_run_local_init_op 493 
+2020-12-25 15:48:35 Restoring parameters from ./core/res/model-302500  saver.py restore 1270 
+2020-12-25 15:48:35 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-1, ''), (-1, '')]]  socket.py write_message 150 
+2020-12-25 15:48:35 PLAYER[1] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-25 15:48:35 AI[-11] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 1]  robot.py to_server 37 
+2020-12-25 15:48:35 AI[-12] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 1]  robot.py to_server 37 
+2020-12-25 15:48:35 REQ[-11]: [19, 1]  socket.py on_message 61 
+2020-12-25 15:48:35 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  socket.py write_message 150 
+2020-12-25 15:48:35 PLAYER[-11] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-25 15:48:35 REQ[-12]: [19, 1]  socket.py on_message 61 
+2020-12-25 15:48:35 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  socket.py write_message 150 
+2020-12-25 15:48:35 PLAYER[-12] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-25 15:48:35 RSP[1]: [<Protocol.RSP_DEAL_POKER: 32>, -12, [0, 1, 2, 11, 15, 17, 23, 26, 35, 38, 43, 44, 45, 47, 48, 51, 52]]  socket.py write_message 150 
+2020-12-25 15:48:35 TABLE[1] GAME BEGIN[[<core.player.Player object at 0x7fdcfcc06320>, <core.robot.AiPlayer object at 0x7fdcfcc6df98>, <core.robot.AiPlayer object at 0x7fdcedf75208>]]  socket.py on_message 99 
+2020-12-25 15:48:35 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-12] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-11] ON: [<Protocol.RSP_DEAL_POKER: 32>, -12, [4, 5, 6, 7, 8, 9, 10, 20, 28, 30, 31, 37, 39, 41, 46, 49, 53]]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-12] ON: [<Protocol.RSP_DEAL_POKER: 32>, -12, [3, 12, 13, 14, 18, 19, 21, 22, 24, 25, 29, 32, 33, 34, 40, 42, 50]]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-12] REQ: [<Protocol.REQ_CALL_SCORE: 33>, 1]  robot.py to_server 37 
+2020-12-25 15:48:35 REQ[-12]: [33, 1]  socket.py on_message 61 
+2020-12-25 15:48:35 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  socket.py write_message 150 
+2020-12-25 15:48:35 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  robot.py from_server 40 
+2020-12-25 15:48:35 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  robot.py from_server 40 
+2020-12-25 15:50:06 REQ[1]: [33, 2]  socket.py on_message 61 
+2020-12-25 15:50:06 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, 1, 2, False]  socket.py write_message 150 
+2020-12-25 15:50:06 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 2, False]  robot.py from_server 40 
+2020-12-25 15:50:06 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 2, False]  robot.py from_server 40 
+2020-12-25 15:50:06 AI[-11] REQ: [<Protocol.REQ_CALL_SCORE: 33>, 1]  robot.py to_server 37 
+2020-12-25 15:50:06 REQ[-11]: [33, 1]  socket.py on_message 61 
+2020-12-25 15:50:06 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, True]  socket.py write_message 150 
+2020-12-25 15:50:06 RSP[1]: [<Protocol.RSP_SHOW_POKER: 36>, 1, [27, 36, 16]]  socket.py write_message 150 
+2020-12-25 15:50:06 Player[1] IS LANDLORD[[27, 36, 16]]  table.py call_score_end 163 
+2020-12-25 15:50:06 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, True]  robot.py from_server 40 
+2020-12-25 15:50:06 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, True]  robot.py from_server 40 
+2020-12-25 15:50:06 AI[-11] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [27, 36, 16]]  robot.py from_server 40 
+2020-12-25 15:50:06 AI[-12] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [27, 36, 16]]  robot.py from_server 40 
+2020-12-25 15:50:09 REQ[1]: [37, [47, 35, 23, 11, 38, 0]]  socket.py on_message 61 
+2020-12-25 15:50:09 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 35, 23, 11, 38, 0]]  socket.py write_message 150 
+2020-12-25 15:50:09 Player[1] shot[[47, 35, 23, 11, 38, 0]]  player.py handle_shot_poker 102 
+2020-12-25 15:50:09 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 35, 23, 11, 38, 0]]  robot.py from_server 40 
+2020-12-25 15:50:29 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 35, 23, 11, 38, 0]]  robot.py from_server 40 
+2020-12-25 15:50:31 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-25 15:50:31 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-25 15:50:31 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-25 15:50:31 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-25 15:50:31 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-25 15:50:31 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-25 15:50:53 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-25 15:50:53 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-25 15:50:53 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-25 15:50:53 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-25 15:50:53 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-25 15:50:53 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-25 15:58:03 REQ[1]: [37, [2, 16, 17, 44, 45]]  socket.py on_message 61 
+2020-12-25 15:58:03 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 16, 17, 44, 45]]  socket.py write_message 150 
+2020-12-25 15:58:03 Player[1] shot[[2, 16, 17, 44, 45]]  player.py handle_shot_poker 102 
+2020-12-25 15:58:03 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 16, 17, 44, 45]]  robot.py from_server 40 
+2020-12-25 15:58:22 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 16, 17, 44, 45]]  robot.py from_server 40 
+2020-12-25 15:58:24 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-25 15:58:24 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-25 15:58:24 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-25 15:58:24 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-25 15:58:24 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-25 15:58:24 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-25 15:58:45 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [18, 19, 33, 21, 22]]  robot.py to_server 37 
+2020-12-25 15:58:45 REQ[-12]: [37, [18, 19, 33, 21, 22]]  socket.py on_message 61 
+2020-12-25 15:58:45 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [18, 19, 33, 21, 22]]  socket.py write_message 150 
+2020-12-25 15:58:45 Player[-12] shot[[18, 19, 33, 21, 22]]  player.py handle_shot_poker 102 
+2020-12-25 15:58:45 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [18, 19, 33, 21, 22]]  robot.py from_server 40 
+2020-12-25 15:58:45 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [18, 19, 33, 21, 22]]  robot.py from_server 40 
+2020-12-25 16:01:04 REQ[1]: [37, []]  socket.py on_message 61 
+2020-12-25 16:01:04 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  socket.py write_message 150 
+2020-12-25 16:01:04 Player[1] shot[[]]  player.py handle_shot_poker 102 
+2020-12-25 16:01:04 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-25 16:01:23 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-25 16:01:23 SOCKET[1] CLOSE  socket.py on_close 57 
+2020-12-25 16:01:25 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-25 16:01:25 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-25 16:01:25 Uncaught exception GET /ws (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8080', method='GET', uri='/ws', version='HTTP/1.1', remote_ip='127.0.0.1')  web.py log_exception 1621 
+Traceback (most recent call last):
+  File "/home/sc/anaconda3/envs/doudizhu/lib/python3.6/site-packages/tornado/web.py", line 1499, in _stack_context_handle_exception
+    raise_exc_info((type, value, traceback))
+  File "<string>", line 4, in raise_exc_info
+  File "/home/sc/anaconda3/envs/doudizhu/lib/python3.6/site-packages/tornado/stack_context.py", line 315, in wrapped
+    ret = fn(*args, **kwargs)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 110, in on_message
+    self.handle_shot_poker(packet)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 22, in wrapper
+    method(socket, packet)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 136, in handle_shot_poker
+    self.player.handle_shot_poker(pokers)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/player.py", line 101, in handle_shot_poker
+    p.send(response)
+AttributeError: 'NoneType' object has no attribute 'send'
+2020-12-28 10:11:10 listening on 8080  app.py main 26 
+2020-12-28 10:11:15 304 GET / (127.0.0.1) 13.88ms  web.py log_request 2106 
+2020-12-28 10:11:16 404 GET /static/s/deal.ogg (127.0.0.1) 0.94ms  web.py log_request 2106 
+2020-12-28 10:11:17 101 GET /ws (127.0.0.1) 0.40ms  web.py log_request 2106 
+2020-12-28 10:11:17 SOCKET[1] OPEN  socket.py open 53 
+2020-12-28 10:11:17 REQ[1]: [17, 1]  socket.py on_message 61 
+2020-12-28 10:11:17 玩家进入 下一步  19 -1  socket.py on_message 75 
+2020-12-28 10:11:17 同时创建房间,并且运行机器人加入  socket.py on_message 77 
+2020-12-28 10:11:17 RSP[1]: [<Protocol.RSP_JOIN_ROOM: 18>, []]  socket.py write_message 150 
+2020-12-28 10:11:17 REQ[1]: [19, -1]  socket.py on_message 61 
+2020-12-28 10:11:20 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:16:03 listening on 8080  app.py main 26 
+2020-12-28 10:16:04 304 GET / (127.0.0.1) 6.40ms  web.py log_request 2106 
+2020-12-28 10:16:04 404 GET /static/s/deal.ogg (127.0.0.1) 0.44ms  web.py log_request 2106 
+2020-12-28 10:16:07 101 GET /ws (127.0.0.1) 0.41ms  web.py log_request 2106 
+2020-12-28 10:16:07 SOCKET[1] OPEN  socket.py open 53 
+2020-12-28 10:16:07 REQ[1]: [17, 1]  socket.py on_message 61 
+2020-12-28 10:16:07 玩家进入 下一步  19 -1  socket.py on_message 75 
+2020-12-28 10:16:07 同时创建房间,并且运行机器人加入  socket.py on_message 77 
+2020-12-28 10:16:07 RSP[1]: [<Protocol.RSP_JOIN_ROOM: 18>, []]  socket.py write_message 150 
+2020-12-28 10:16:07 REQ[1]: [19, -1]  socket.py on_message 61 
+2020-12-28 10:16:10 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:16:12 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:16:15 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:16:15 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-1, ''), (-1, '')]]  socket.py write_message 150 
+2020-12-28 10:16:15 PLAYER[1] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-28 10:16:15 AI[-11] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 1]  robot.py to_server 37 
+2020-12-28 10:16:15 AI[-12] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 1]  robot.py to_server 37 
+2020-12-28 10:16:15 REQ[-11]: [19, 1]  socket.py on_message 61 
+2020-12-28 10:16:15 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  socket.py write_message 150 
+2020-12-28 10:16:15 PLAYER[-11] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-28 10:16:15 REQ[-12]: [19, 1]  socket.py on_message 61 
+2020-12-28 10:16:15 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  socket.py write_message 150 
+2020-12-28 10:16:15 PLAYER[-12] JOIN TABLE[1]  socket.py on_message 95 
+2020-12-28 10:16:15 RSP[1]: [<Protocol.RSP_DEAL_POKER: 32>, 1, [1, 2, 3, 5, 11, 13, 17, 18, 27, 29, 30, 35, 40, 41, 46, 49, 52]]  socket.py write_message 150 
+2020-12-28 10:16:15 TABLE[1] GAME BEGIN[[<core.player.Player object at 0x7f293f192e10>, <core.robot.AiPlayer object at 0x7f293f192b70>, <core.robot.AiPlayer object at 0x7f2939137a20>]]  socket.py on_message 99 
+2020-12-28 10:16:15 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  robot.py from_server 40 
+2020-12-28 10:16:15 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-28 10:16:15 AI[-12] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 1, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-28 10:16:15 AI[-11] ON: [<Protocol.RSP_DEAL_POKER: 32>, 1, [0, 4, 7, 10, 12, 14, 15, 16, 25, 31, 32, 33, 37, 39, 42, 45, 53]]  robot.py from_server 40 
+2020-12-28 10:16:15 AI[-12] ON: [<Protocol.RSP_DEAL_POKER: 32>, 1, [8, 9, 19, 20, 21, 22, 23, 24, 26, 28, 34, 38, 43, 47, 48, 50, 51]]  robot.py from_server 40 
+2020-12-28 10:16:22 REQ[1]: [33, 3]  socket.py on_message 61 
+2020-12-28 10:16:22 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  socket.py write_message 150 
+2020-12-28 10:16:22 RSP[1]: [<Protocol.RSP_SHOW_POKER: 36>, 1, [36, 6, 44]]  socket.py write_message 150 
+2020-12-28 10:16:22 Player[1] IS LANDLORD[[36, 6, 44]]  table.py call_score_end 163 
+2020-12-28 10:16:22 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  robot.py from_server 40 
+2020-12-28 10:16:22 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  robot.py from_server 40 
+2020-12-28 10:16:22 AI[-11] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [36, 6, 44]]  robot.py from_server 40 
+2020-12-28 10:16:22 AI[-12] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [36, 6, 44]]  robot.py from_server 40 
+2020-12-28 10:16:26 REQ[1]: [37, [2, 41, 3, 29, 17, 30, 5, 18]]  socket.py on_message 61 
+2020-12-28 10:16:26 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 41, 3, 29, 17, 30, 5, 18]]  socket.py write_message 150 
+2020-12-28 10:16:26 Player[1] shot[[2, 41, 3, 29, 17, 30, 5, 18]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:26 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 41, 3, 29, 17, 30, 5, 18]]  robot.py from_server 40 
+2020-12-28 10:16:28 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [2, 41, 3, 29, 17, 30, 5, 18]]  robot.py from_server 40 
+2020-12-28 10:16:30 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:16:30 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:16:30 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:16:30 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:30 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:16:30 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:16:33 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:16:33 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:16:33 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:16:33 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:33 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:16:33 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:16:47 REQ[1]: [37, [44]]  socket.py on_message 61 
+2020-12-28 10:16:47 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [44]]  socket.py write_message 150 
+2020-12-28 10:16:47 Player[1] shot[[44]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:47 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [44]]  robot.py from_server 40 
+2020-12-28 10:16:48 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [44]]  robot.py from_server 40 
+2020-12-28 10:16:50 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [32]]  robot.py to_server 37 
+2020-12-28 10:16:50 REQ[-11]: [37, [32]]  socket.py on_message 61 
+2020-12-28 10:16:50 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, [32]]  socket.py write_message 150 
+2020-12-28 10:16:50 Player[-11] shot[[32]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:50 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [32]]  robot.py from_server 40 
+2020-12-28 10:16:50 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [32]]  robot.py from_server 40 
+2020-12-28 10:16:53 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [20]]  robot.py to_server 37 
+2020-12-28 10:16:53 REQ[-12]: [37, [20]]  socket.py on_message 61 
+2020-12-28 10:16:53 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [20]]  socket.py write_message 150 
+2020-12-28 10:16:53 Player[-12] shot[[20]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:53 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [20]]  robot.py from_server 40 
+2020-12-28 10:16:53 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [20]]  robot.py from_server 40 
+2020-12-28 10:16:58 REQ[1]: [37, [35]]  socket.py on_message 61 
+2020-12-28 10:16:58 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [35]]  socket.py write_message 150 
+2020-12-28 10:16:58 Player[1] shot[[35]]  player.py handle_shot_poker 102 
+2020-12-28 10:16:58 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [35]]  robot.py from_server 40 
+2020-12-28 10:16:59 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [35]]  robot.py from_server 40 
+2020-12-28 10:17:01 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [10]]  robot.py to_server 37 
+2020-12-28 10:17:01 REQ[-11]: [37, [10]]  socket.py on_message 61 
+2020-12-28 10:17:01 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, [10]]  socket.py write_message 150 
+2020-12-28 10:17:01 Player[-11] shot[[10]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:01 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [10]]  robot.py from_server 40 
+2020-12-28 10:17:01 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [10]]  robot.py from_server 40 
+2020-12-28 10:17:04 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [26]]  robot.py to_server 37 
+2020-12-28 10:17:04 REQ[-12]: [37, [26]]  socket.py on_message 61 
+2020-12-28 10:17:04 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [26]]  socket.py write_message 150 
+2020-12-28 10:17:04 Player[-12] shot[[26]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:04 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [26]]  robot.py from_server 40 
+2020-12-28 10:17:04 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [26]]  robot.py from_server 40 
+2020-12-28 10:17:14 REQ[1]: [37, [1]]  socket.py on_message 61 
+2020-12-28 10:17:14 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [1]]  socket.py write_message 150 
+2020-12-28 10:17:14 Player[1] shot[[1]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:14 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [1]]  robot.py from_server 40 
+2020-12-28 10:17:15 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [1]]  robot.py from_server 40 
+2020-12-28 10:17:17 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:17:17 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:17:17 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:17:17 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:17 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:17:17 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:17:20 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:17:20 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:17:20 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:17:20 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:20 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:17:20 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:17:23 REQ[1]: [37, [6]]  socket.py on_message 61 
+2020-12-28 10:17:23 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [6]]  socket.py write_message 150 
+2020-12-28 10:17:23 Player[1] shot[[6]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:23 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [6]]  robot.py from_server 40 
+2020-12-28 10:17:24 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [6]]  robot.py from_server 40 
+2020-12-28 10:17:26 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [7]]  robot.py to_server 37 
+2020-12-28 10:17:26 REQ[-11]: [37, [7]]  socket.py on_message 61 
+2020-12-28 10:17:26 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, [7]]  socket.py write_message 150 
+2020-12-28 10:17:26 Player[-11] shot[[7]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:26 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [7]]  robot.py from_server 40 
+2020-12-28 10:17:26 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [7]]  robot.py from_server 40 
+2020-12-28 10:17:29 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [23]]  robot.py to_server 37 
+2020-12-28 10:17:29 REQ[-12]: [37, [23]]  socket.py on_message 61 
+2020-12-28 10:17:29 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [23]]  socket.py write_message 150 
+2020-12-28 10:17:29 Player[-12] shot[[23]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:29 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [23]]  robot.py from_server 40 
+2020-12-28 10:17:29 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [23]]  robot.py from_server 40 
+2020-12-28 10:17:32 REQ[1]: [37, [11]]  socket.py on_message 61 
+2020-12-28 10:17:32 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [11]]  socket.py write_message 150 
+2020-12-28 10:17:32 Player[1] shot[[11]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:32 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [11]]  robot.py from_server 40 
+2020-12-28 10:17:33 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [11]]  robot.py from_server 40 
+2020-12-28 10:17:35 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:17:35 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:17:35 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:17:35 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:35 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:17:35 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:17:38 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:17:38 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:17:38 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:17:38 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:17:38 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:17:38 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:18:23 REQ[1]: [37, [13]]  socket.py on_message 61 
+2020-12-28 10:18:23 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [13]]  socket.py write_message 150 
+2020-12-28 10:18:23 Player[1] shot[[13]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:23 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [13]]  robot.py from_server 40 
+2020-12-28 10:18:24 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [13]]  robot.py from_server 40 
+2020-12-28 10:18:26 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:18:26 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:18:26 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:18:26 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:26 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:18:26 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:18:29 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:18:29 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:18:29 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:18:29 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:29 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:18:29 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:18:32 REQ[1]: [37, [46]]  socket.py on_message 61 
+2020-12-28 10:18:32 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [46]]  socket.py write_message 150 
+2020-12-28 10:18:32 Player[1] shot[[46]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:32 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [46]]  robot.py from_server 40 
+2020-12-28 10:18:33 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [46]]  robot.py from_server 40 
+2020-12-28 10:18:35 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:18:35 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:18:35 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:18:35 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:35 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:18:35 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:18:38 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:18:38 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:18:38 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:18:38 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:38 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:18:38 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:18:58 REQ[1]: [37, [36]]  socket.py on_message 61 
+2020-12-28 10:18:58 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [36]]  socket.py write_message 150 
+2020-12-28 10:18:58 Player[1] shot[[36]]  player.py handle_shot_poker 102 
+2020-12-28 10:18:58 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [36]]  robot.py from_server 40 
+2020-12-28 10:18:59 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [36]]  robot.py from_server 40 
+2020-12-28 10:19:01 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:19:01 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:19:01 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:19:01 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:19:01 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:19:01 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:19:04 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:19:04 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:19:04 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:19:04 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:19:04 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:19:04 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:19:07 SOCKET[1] CLOSE  socket.py on_close 57 
+2020-12-28 10:29:09 304 GET / (127.0.0.1) 0.99ms  web.py log_request 2106 
+2020-12-28 10:29:09 404 GET /static/s/deal.ogg (127.0.0.1) 0.38ms  web.py log_request 2106 
+2020-12-28 10:29:16 101 GET /ws (127.0.0.1) 0.32ms  web.py log_request 2106 
+2020-12-28 10:29:16 SOCKET[1] OPEN  socket.py open 53 
+2020-12-28 10:29:16 REQ[1]: [17, 1]  socket.py on_message 61 
+2020-12-28 10:29:16 玩家进入 下一步  19 -1  socket.py on_message 75 
+2020-12-28 10:29:16 同时创建房间,并且运行机器人加入  socket.py on_message 77 
+2020-12-28 10:29:16 RSP[1]: [<Protocol.RSP_JOIN_ROOM: 18>, []]  socket.py write_message 150 
+2020-12-28 10:29:16 REQ[1]: [19, -1]  socket.py on_message 61 
+2020-12-28 10:29:18 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:29:20 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:29:23 Restoring parameters from ./core/res/model-302500  tf_logging.py info 82 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-1, ''), (-1, '')]]  socket.py write_message 150 
+2020-12-28 10:29:23 PLAYER[1] JOIN TABLE[2]  socket.py on_message 95 
+2020-12-28 10:29:23 AI[-11] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 2]  robot.py to_server 37 
+2020-12-28 10:29:23 AI[-12] REQ: [<Protocol.REQ_JOIN_TABLE: 19>, 2]  robot.py to_server 37 
+2020-12-28 10:29:23 REQ[-11]: [19, 2]  socket.py on_message 61 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  socket.py write_message 150 
+2020-12-28 10:29:23 PLAYER[-11] JOIN TABLE[2]  socket.py on_message 95 
+2020-12-28 10:29:23 REQ[-12]: [19, 2]  socket.py on_message 61 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  socket.py write_message 150 
+2020-12-28 10:29:23 PLAYER[-12] JOIN TABLE[2]  socket.py on_message 95 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_DEAL_POKER: 32>, -11, [1, 10, 13, 14, 18, 20, 21, 22, 27, 30, 31, 37, 38, 45, 47, 48, 49]]  socket.py write_message 150 
+2020-12-28 10:29:23 TABLE[2] GAME BEGIN[[<core.player.Player object at 0x7f293a5a8898>, <core.robot.AiPlayer object at 0x7f286e63a710>, <core.robot.AiPlayer object at 0x7f286e593e48>]]  socket.py on_message 99 
+2020-12-28 10:29:23 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-1, '')]]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-11] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-12] ON: [<Protocol.RSP_JOIN_TABLE: 20>, 2, [(1, 'shuchang'), (-11, 'IDIOT-I'), (-12, 'IDIOT-II')]]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-11] ON: [<Protocol.RSP_DEAL_POKER: 32>, -11, [0, 3, 4, 6, 16, 23, 28, 29, 32, 33, 35, 39, 42, 43, 44, 46, 53]]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-12] ON: [<Protocol.RSP_DEAL_POKER: 32>, -11, [2, 5, 7, 8, 9, 11, 12, 17, 19, 24, 26, 34, 36, 40, 50, 51, 52]]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-11] REQ: [<Protocol.REQ_CALL_SCORE: 33>, 1]  robot.py to_server 37 
+2020-12-28 10:29:23 REQ[-11]: [33, 1]  socket.py on_message 61 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, False]  socket.py write_message 150 
+2020-12-28 10:29:23 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, False]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, -11, 1, False]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-12] REQ: [<Protocol.REQ_CALL_SCORE: 33>, 1]  robot.py to_server 37 
+2020-12-28 10:29:23 REQ[-12]: [33, 1]  socket.py on_message 61 
+2020-12-28 10:29:23 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  socket.py write_message 150 
+2020-12-28 10:29:23 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  robot.py from_server 40 
+2020-12-28 10:29:23 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, -12, 1, False]  robot.py from_server 40 
+2020-12-28 10:29:27 REQ[1]: [33, 3]  socket.py on_message 61 
+2020-12-28 10:29:27 RSP[1]: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  socket.py write_message 150 
+2020-12-28 10:29:27 RSP[1]: [<Protocol.RSP_SHOW_POKER: 36>, 1, [15, 25, 41]]  socket.py write_message 150 
+2020-12-28 10:29:27 Player[1] IS LANDLORD[[15, 25, 41]]  table.py call_score_end 163 
+2020-12-28 10:29:27 AI[-11] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  robot.py from_server 40 
+2020-12-28 10:29:27 AI[-12] ON: [<Protocol.RSP_CALL_SCORE: 34>, 1, 3, True]  robot.py from_server 40 
+2020-12-28 10:29:27 AI[-11] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [15, 25, 41]]  robot.py from_server 40 
+2020-12-28 10:29:27 AI[-12] ON: [<Protocol.RSP_SHOW_POKER: 36>, 1, [15, 25, 41]]  robot.py from_server 40 
+2020-12-28 10:29:39 REQ[1]: [37, [30, 18, 45, 20, 21, 22, 10]]  socket.py on_message 61 
+2020-12-28 10:29:39 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [30, 18, 45, 20, 21, 22, 10]]  socket.py write_message 150 
+2020-12-28 10:29:39 Player[1] shot[[30, 18, 45, 20, 21, 22, 10]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:39 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [30, 18, 45, 20, 21, 22, 10]]  robot.py from_server 40 
+2020-12-28 10:29:40 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [30, 18, 45, 20, 21, 22, 10]]  robot.py from_server 40 
+2020-12-28 10:29:42 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:29:42 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:29:42 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:29:42 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:42 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:29:42 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:29:45 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:29:45 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:29:45 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:29:45 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:45 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:29:45 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:29:50 REQ[1]: [37, [31]]  socket.py on_message 61 
+2020-12-28 10:29:50 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [31]]  socket.py write_message 150 
+2020-12-28 10:29:50 Player[1] shot[[31]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:50 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [31]]  robot.py from_server 40 
+2020-12-28 10:29:51 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [31]]  robot.py from_server 40 
+2020-12-28 10:29:53 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [6]]  robot.py to_server 37 
+2020-12-28 10:29:53 REQ[-11]: [37, [6]]  socket.py on_message 61 
+2020-12-28 10:29:53 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, [6]]  socket.py write_message 150 
+2020-12-28 10:29:53 Player[-11] shot[[6]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:53 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [6]]  robot.py from_server 40 
+2020-12-28 10:29:53 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, [6]]  robot.py from_server 40 
+2020-12-28 10:29:56 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [8]]  robot.py to_server 37 
+2020-12-28 10:29:56 REQ[-12]: [37, [8]]  socket.py on_message 61 
+2020-12-28 10:29:56 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [8]]  socket.py write_message 150 
+2020-12-28 10:29:56 Player[-12] shot[[8]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:56 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [8]]  robot.py from_server 40 
+2020-12-28 10:29:56 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [8]]  robot.py from_server 40 
+2020-12-28 10:29:58 REQ[1]: [37, [25]]  socket.py on_message 61 
+2020-12-28 10:29:58 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [25]]  socket.py write_message 150 
+2020-12-28 10:29:58 Player[1] shot[[25]]  player.py handle_shot_poker 102 
+2020-12-28 10:29:58 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [25]]  robot.py from_server 40 
+2020-12-28 10:29:59 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [25]]  robot.py from_server 40 
+2020-12-28 10:30:01 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:01 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:01 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:30:01 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:01 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:01 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:04 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [40]]  robot.py to_server 37 
+2020-12-28 10:30:04 REQ[-12]: [37, [40]]  socket.py on_message 61 
+2020-12-28 10:30:04 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [40]]  socket.py write_message 150 
+2020-12-28 10:30:04 Player[-12] shot[[40]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:04 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [40]]  robot.py from_server 40 
+2020-12-28 10:30:04 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [40]]  robot.py from_server 40 
+2020-12-28 10:30:06 REQ[1]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:06 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  socket.py write_message 150 
+2020-12-28 10:30:06 Player[1] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:06 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-28 10:30:07 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-28 10:30:09 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:09 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:09 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:30:09 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:09 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:09 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:12 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [17, 5, 19, 7, 34, 9, 36]]  robot.py to_server 37 
+2020-12-28 10:30:12 REQ[-12]: [37, [17, 5, 19, 7, 34, 9, 36]]  socket.py on_message 61 
+2020-12-28 10:30:12 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [17, 5, 19, 7, 34, 9, 36]]  socket.py write_message 150 
+2020-12-28 10:30:12 Player[-12] shot[[17, 5, 19, 7, 34, 9, 36]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:12 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [17, 5, 19, 7, 34, 9, 36]]  robot.py from_server 40 
+2020-12-28 10:30:12 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [17, 5, 19, 7, 34, 9, 36]]  robot.py from_server 40 
+2020-12-28 10:30:14 REQ[1]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:14 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  socket.py write_message 150 
+2020-12-28 10:30:14 Player[1] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:14 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-28 10:30:15 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, []]  robot.py from_server 40 
+2020-12-28 10:30:17 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:17 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:17 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:30:17 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:17 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:17 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:20 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, [11, 24, 50, 2]]  robot.py to_server 37 
+2020-12-28 10:30:20 REQ[-12]: [37, [11, 24, 50, 2]]  socket.py on_message 61 
+2020-12-28 10:30:20 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, [11, 24, 50, 2]]  socket.py write_message 150 
+2020-12-28 10:30:20 Player[-12] shot[[11, 24, 50, 2]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:20 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [11, 24, 50, 2]]  robot.py from_server 40 
+2020-12-28 10:30:20 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, [11, 24, 50, 2]]  robot.py from_server 40 
+2020-12-28 10:30:23 REQ[1]: [37, [15, 1, 14, 27]]  socket.py on_message 61 
+2020-12-28 10:30:23 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [15, 1, 14, 27]]  socket.py write_message 150 
+2020-12-28 10:30:23 Player[1] shot[[15, 1, 14, 27]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:23 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [15, 1, 14, 27]]  robot.py from_server 40 
+2020-12-28 10:30:24 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [15, 1, 14, 27]]  robot.py from_server 40 
+2020-12-28 10:30:26 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:26 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:26 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:30:26 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:26 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:26 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:29 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:29 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:29 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:30:29 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:29 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:30:29 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:30:31 REQ[1]: [37, [47, 48, 49, 37, 38, 13]]  socket.py on_message 61 
+2020-12-28 10:30:31 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 48, 49, 37, 38, 13]]  socket.py write_message 150 
+2020-12-28 10:30:31 Player[1] shot[[47, 48, 49, 37, 38, 13]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:31 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 48, 49, 37, 38, 13]]  robot.py from_server 40 
+2020-12-28 10:30:32 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, 1, [47, 48, 49, 37, 38, 13]]  robot.py from_server 40 
+2020-12-28 10:30:34 AI[-11] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:34 REQ[-11]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:34 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  socket.py write_message 150 
+2020-12-28 10:30:34 Player[-11] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:34 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:34 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -11, []]  robot.py from_server 40 
+2020-12-28 10:30:37 AI[-12] REQ: [<Protocol.REQ_SHOT_POKER: 37>, []]  robot.py to_server 37 
+2020-12-28 10:30:37 REQ[-12]: [37, []]  socket.py on_message 61 
+2020-12-28 10:30:37 RSP[1]: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  socket.py write_message 150 
+2020-12-28 10:30:37 Player[-12] shot[[]]  player.py handle_shot_poker 102 
+2020-12-28 10:30:37 AI[-11] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:30:37 AI[-12] ON: [<Protocol.RSP_SHOT_POKER: 38>, -12, []]  robot.py from_server 40 
+2020-12-28 10:30:39 REQ[1]: [37, [41]]  socket.py on_message 61 
+2020-12-28 10:30:39 RSP[1]: [<Protocol.RSP_GAME_OVER: 42>, 1, 500, [-11, 0, 3, 4, 16, 23, 28, 29, 32, 33, 35, 39, 42, 43, 44, 46, 53], [-12, 12, 26, 51, 52]]  socket.py write_message 150 
+2020-12-28 10:30:39 Uncaught exception in /ws  websocket.py _run_callback 501 
+Traceback (most recent call last):
+  File "/home/sc/anaconda3/envs/doudizhu/lib/python3.6/site-packages/tornado/websocket.py", line 498, in _run_callback
+    result = callback(*args, **kwargs)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 110, in on_message
+    self.handle_shot_poker(packet)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 22, in wrapper
+    method(socket, packet)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/handlers/socket.py", line 136, in handle_shot_poker
+    self.player.handle_shot_poker(pokers)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/player.py", line 97, in handle_shot_poker
+    self.table.on_game_over(self)
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/table.py", line 253, in on_game_over
+    parselog2txt()
+  File "/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/table.py", line 248, in parselog2txt
+    with open('./core/log/%d.txt' % self.uid, 'a+') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './core/log/2.txt'
+2020-12-28 10:30:39 AI[-11] ON: [<Protocol.RSP_GAME_OVER: 42>, 1, 300, [1], [-12, 12, 26, 51, 52]]  robot.py from_server 40 
+2020-12-28 10:30:39 AI[-12] ON: [<Protocol.RSP_GAME_OVER: 42>, 1, 300, [1], [-11, 0, 3, 4, 16, 23, 28, 29, 32, 33, 35, 39, 42, 43, 44, 46, 53]]  robot.py from_server 40 
+2020-12-28 10:30:39 SOCKET[1] CLOSE  socket.py on_close 57 
