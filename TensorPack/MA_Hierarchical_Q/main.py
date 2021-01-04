@@ -3,6 +3,8 @@ import sys
 FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 ROOT_PATH = os.path.abspath(os.path.join(FILE_PATH, '../..'))
 sys.path.append(ROOT_PATH)
+print(os.name)
+print(ROOT_PATH)
 sys.path.insert(0, os.path.join(ROOT_PATH, 'build/Release' if os.name == 'nt' else 'build'))
 from tensorpack import *
 from TensorPack.MA_Hierarchical_Q.expreplay import ExpReplay

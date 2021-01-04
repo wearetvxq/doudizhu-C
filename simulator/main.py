@@ -97,7 +97,6 @@ if __name__ == '__main__':
 
 
     hwnds = []
-    win32gui.EnumWindows(callback, hwnds)
 
     name_sim2exp = 'tcp://127.0.0.1:1234'
     name_exp2sim = 'tcp://127.0.0.1:2234'
@@ -109,9 +108,8 @@ if __name__ == '__main__':
     name_mgr2sim = 'tcp://127.0.0.1:6234'
 
     agent_names = ['agent%d' % i for i in range(1, 4)]
-
+    hwnds=[(300, 100, 1400, 600)]
     rect = get_window_rect(hwnds[0])
-    print(hwnds)
 
     # no exploration now
     sims = [Simulator(idx=i, hwnd=hwnds[i], pipe_sim2exps=[name_sim2exp + str(j) for j in range(3)], pipe_exps2sim=[name_exp2sim + str(j) for j in range(3)],
@@ -184,9 +182,10 @@ if __name__ == '__main__':
     # client.join()
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu', help='comma separated list of GPU(s) to use.')
-    parser.add_argument('--load', help='load model')
+    parser.add_argument('--load', help='load model' ,default='/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/res/model-302500')
     parser.add_argument('--task', help='task to perform',
-                        choices=['play', 'eval', 'train'], default='train')
+                        choices=['play', 'eval', 'train'], default='play')
+    # 比想象中复杂  有 play  eval train
     parser.add_argument('--algo', help='algorithm',
                         choices=['DQN', 'Double', 'Dueling'], default='Double')
     args = parser.parse_args()
@@ -202,7 +201,7 @@ if __name__ == '__main__':
     if args.task != 'train':
         assert args.load is not None
         pred = OfflinePredictor(PredictConfig(
-            model=Model(),
+            model=Model(agent_names, STATE_SHAPE, METHOD, NUM_ACTIONS, GAMMA),
             session_init=get_model_loader(args.load),
             input_names=['state', 'comb_mask'],
             output_names=['Qvalue']))

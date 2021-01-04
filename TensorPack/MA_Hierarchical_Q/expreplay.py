@@ -40,7 +40,7 @@ class ReplayMemory(object):
     def __init__(self, max_size, state_shape):
         self.max_size = int(max_size)
         self.state_shape = state_shape
-
+        print(self.max_size,state_shape)
         self.state = np.zeros((self.max_size,) + state_shape, dtype='float32')
         self.action = np.zeros((self.max_size,), dtype='int32')
         self.reward = np.zeros((self.max_size,), dtype='float32')

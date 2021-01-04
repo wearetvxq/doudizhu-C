@@ -2,7 +2,10 @@
 __pycache__/
 *.py[cod]
 .pytest_cache
-
+*.index
+model-3*
+doudizhu-tornado/core/res
+*.data-00000-of-00001
 # PyCharm
 .idea
 

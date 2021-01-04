@@ -10,7 +10,6 @@ from tensorpack import *
 import numpy as np
 
 from env import Env, get_combinations_nosplit, get_combinations_recursive
-from logger import Logger
 from utils import to_char
 from card import Card, action_space, action_space_onehot60, Category, CardGroup, augment_action_space_onehot60, \
     augment_action_space, clamp_action_idx
@@ -24,7 +23,7 @@ from tensorpack.utils.serialize import dumps, loads
 class Predictor:
     def __init__(self):
         self.num_actions = [100, 21]
-        self.encoding = np.load('../Tensorpack/AutoEncoder/encoding.npy')
+        self.encoding = np.load('/home/sc/Pictures/wearetvxq/doudizhu-C/TensorPack/AutoEncoder/encoding.npy')
         print('predictor loaded')
 
     def pad_state(self, state):

@@ -48,8 +48,8 @@ class Table(object):
         self.state = 0  # 0 waiting  1 playing 2 end 3 closed
         self.pokers: List[int] = []
         self.multiple = 1
-        self.call_score = 0
-        self.max_call_score = 0
+        self.call_score = 3
+        self.max_call_score = 3
         self.max_call_score_turn = 0
         self.whose_turn = 0
         self.lord_turn = 0
@@ -60,8 +60,9 @@ class Table(object):
         self.history = [None, None, None]
         self.log = []
         self.game_over = False
-        if room.allow_robot:
-            IOLoop.current().call_later(0.1, self.ai_join, nth=1)
+        # if room.allow_robot:
+        #     #创建桌子 如果是运行机器人的 异步加入机器人
+        #     IOLoop.current().call_later(0.1, self.ai_join, nth=1)
         agent_names = ['agent%d' % i for i in range(1, 4)]
         self.predictor_agent1 = Predictor(OfflinePredictor(PredictConfig(
             model=Model(agent_names, STATE_SHAPE, METHOD, NUM_ACTIONS, GAMMA),
@@ -96,32 +97,67 @@ class Table(object):
         self.last_shot_poker = []
         self.players[0].send([Pt.RSP_RESTART])
         self.game_over = False
+
+        self.state=0
+
         for h in self.history:
             if h is not None:
                 h.clear()
         for player in self.players:
             # player.join_table(self)
             player.reset()
-        if self.is_full():
-            self.deal_poker()
-            self.room.on_table_changed(self)
-            logger.info('TABLE[%s] GAME BEGIN[%s]', self.uid, self.players[0].uid)
+        print("重启的开始手动控制")
+
+        # if self.is_full():
+        #     self.deal_poker()
+        #     self.room.on_table_changed(self)
+        #     logger.info('TABLE[%s] GAME BEGIN[%s]', self.uid, self.players[0].uid)
 
     def ai_join(self, nth=1):
         print("机器人加入")
         size = self.size()
-        if size == 0 or size == 3:
-            return
+        print(size)
+        # if size == 0 or size == 3:
+        #     return
 
-        if size == 2 and nth == 1:
-            IOLoop.current().call_later(1, self.ai_join, nth=2)
-
+        # if size == 2 and nth == 1:
+        #     # 还差机器人的话 异步 再加一个
+        #     IOLoop.current().call_later(1, self.ai_join, nth=2)
+        print("这里为什么要给player啊????,就是为了拿room啊")
         p1 = AiPlayer(RIGHT_ROBOT_UID, 'IDIOT-I', self.players[0])
+        print("这里是告诉服务器机器人入桌")
         p1.to_server([Pt.REQ_JOIN_TABLE, self.uid])
 
-        if size == 1:
-            p2 = AiPlayer(LEFT_ROBOT_UID, 'IDIOT-II', self.players[0])
-            p2.to_server([Pt.REQ_JOIN_TABLE, self.uid])
+        #不用发送通知
+        # p1.to_server([Pt.REQ_JOIN_TABLE, self.uid])
+
+        # if size == 1:
+        #     p2 = AiPlayer(LEFT_ROBOT_UID, 'IDIOT-II', self.players[0])
+        #     p2.to_server([Pt.REQ_JOIN_TABLE, self.uid])
+        return p1
+
+    def deal_poker(self,rebot_hand_pokers):
+        # if not all(p and p.ready for p in self.players):
+        #     return
+
+        self.state = Table.PLAYING
+        self.pokers = [i for i in range(54)]
+        # random.shuffle(self.pokers)
+        # for i in range(51):
+        #     self.players[i % 3].hand_pokers.append(self.pokers.pop())
+        self.players[0].hand_pokers=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        self.players[1].hand_pokers=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        self.players[2].hand_pokers=rebot_hand_pokers
+        print("发牌","还要找到选说话的人")
+        self.whose_turn = 0
+        for k,p in enumerate(self.players) :
+            p.hand_pokers.sort()
+            print(p.hand_pokers)
+            #机器人需要发牌吗?
+            if k==2:
+                #给他们加倍么?????
+                response = [Pt.RSP_DEAL_POKER, self.turn_player.uid, p.hand_pokers]
+                p.send(response)
 
     def sync_table(self):
         ps = []
@@ -131,58 +167,53 @@ class Table(object):
             else:
                 ps.append((-1, ''))
         response = [Pt.RSP_JOIN_TABLE, self.uid, ps]
-        for player in self.players:
+        for k,player in  enumerate(self.players):
             if player:
-                player.send(response)
-
-    def deal_poker(self):
-        # if not all(p and p.ready for p in self.players):
-        #     return
-
-        self.state = Table.PLAYING
-        self.pokers = [i for i in range(54)]
-        random.shuffle(self.pokers)
-        for i in range(51):
-            self.players[i % 3].hand_pokers.append(self.pokers.pop())
-        print("发牌")
-        self.whose_turn = random.randint(0, 2)
-        for p in self.players:
-            p.hand_pokers.sort()
-            print(p.hand_pokers)
-            response = [Pt.RSP_DEAL_POKER, self.turn_player.uid, p.hand_pokers]
-            p.send(response)
+                if k !=2:
+                    player.send(response)
+                else:
+                    print("机器人的一些消息放弃吧")
 
     def call_score_end(self):
+        print("叫分抢地主结束,是 0 ，1， 2")
         self.call_score = self.max_call_score
         self.whose_turn = self.max_call_score_turn
         self.turn_player.role = 2
+        # 这里还要给底牌
         self.turn_player.hand_pokers += self.pokers
+        print("给地主加三张牌！！！",self.turn_player.hand_pokers,self.pokers)
         response = [Pt.RSP_SHOW_POKER, self.turn_player.uid, self.pokers]
         for p in self.players:
             p.send(response)
         logger.info('Player[%d] IS LANDLORD[%s]', self.turn_player.uid, str(self.pokers))
         # assign models for AI
-        this_agent_idx = 0
-        next_agent_idx = 0
-        if self.turn_player.uid == RIGHT_ROBOT_UID:
-            this_agent_idx = self.whose_turn
-            while self.players[next_agent_idx].uid != LEFT_ROBOT_UID:
-                next_agent_idx += 1
-            self.players[this_agent_idx].predictor = self.predictor_agent1
-            self.players[next_agent_idx].predictor = self.predictor_agent2
-        elif self.turn_player == LEFT_ROBOT_UID:
-            this_agent_idx = self.whose_turn
-            while self.players[next_agent_idx].uid != RIGHT_ROBOT_UID:
-                next_agent_idx += 1
-            self.players[this_agent_idx].predictor = self.predictor_agent1
-            self.players[next_agent_idx].predictor = self.predictor_agent3
-        else:
-            while self.players[next_agent_idx].uid != LEFT_ROBOT_UID:
-                next_agent_idx += 1
-            while self.players[this_agent_idx].uid != RIGHT_ROBOT_UID:
-                this_agent_idx += 1
-            self.players[this_agent_idx].predictor = self.predictor_agent2
-            self.players[next_agent_idx].predictor = self.predictor_agent3
+        print("给机器人赋值预判器")
+        self.players[2].predictor = self.predictor_agent3
+        print("机器人也就是自己是地主的话要开始出牌了",self.players[2].role,self.whose_turn)
+
+        if self.whose_turn ==2:
+            self.players[2].auto_shot_poker()
+        # 这是啥？？？？ 给机器人赋值预判器
+        # this_agent_idx = 0
+        # next_agent_idx = 0
+        # if self.turn_player.uid == RIGHT_ROBOT_UID:
+        #     this_agent_idx = self.whose_turn
+        #     while self.players[next_agent_idx].uid != LEFT_ROBOT_UID:
+        #         next_agent_idx += 1
+        #     self.players[this_agent_idx].predictor = self.predictor_agent1
+        #     self.players[next_agent_idx].predictor = self.predictor_agent2
+        # elif self.turn_player.uid == LEFT_ROBOT_UID:
+        #     this_agent_idx = self.whose_turn
+        #     while self.players[next_agent_idx].uid != RIGHT_ROBOT_UID:
+        #         next_agent_idx += 1
+        #     self.players[this_agent_idx].predictor = self.predictor_agent1
+        #     self.players[next_agent_idx].predictor = self.predictor_agent3
+        # else:
+        #     while self.players[next_agent_idx].uid != LEFT_ROBOT_UID:
+        #         next_agent_idx += 1
+        #     while self.players[this_agent_idx].uid != RIGHT_ROBOT_UID:
+        #         this_agent_idx += 1
+        #     self.players[this_agent_idx].predictor = self.predictor_agent2
 
     def go_next_turn(self):
         if self.turn_player.become_controller:
@@ -245,7 +276,7 @@ class Table(object):
             return cards
 
         def parselog2txt():
-            with open('./core/log/%d.txt' % self.uid, 'a+') as f:
+            with open('/home/sc/Pictures/wearetvxq/doudizhu-C/doudizhu-tornado/core/log/%d.txt' % self.uid, 'a+') as f:
                 for record in self.log:
                     f.write(str(record[0]) + ' ' + ','.join(pokers_to_char(record[1])) + '\n')
                 f.write('game over\n')
@@ -255,6 +286,10 @@ class Table(object):
         # TODO deduct coin from database
         # TODO store poker round to database
         logger.info('Table[%d] GameOver[%d]', self.uid, self.uid)
+
+        print("要自己清除不然下一个会出错")
+
+        self.reset()
 
     def remove(self, player):
         for i, p in enumerate(self.players):

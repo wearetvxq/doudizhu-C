@@ -18,9 +18,7 @@ import os
 from simulator.config import ConfigurationOffline
 import time
 from PIL import ImageGrab
-import win32gui
 import skimage.measure
-import win32api, win32con
 
 cf_offline = ConfigurationOffline()
 
@@ -302,8 +300,10 @@ def get_game_center(image):
 
 
 def get_window_rect(hwnd):
-    rect = win32gui.GetWindowRect(hwnd)
-    return rect
+    print("去掉win32 貌似是拿界面的")
+    return (300, 100, 1400, 600)
+    # rect = win32gui.GetWindowRect(hwnd)
+    # return rect
 
 
 def grab_screen(photo_name='test.png'):
@@ -313,8 +313,9 @@ def grab_screen(photo_name='test.png'):
     #     print('./video/f%d.png' % i)
     #     yield cv2.imread('./video/f%d.png' % i)
     # hwnd = win32gui.FindWindow(None, cf_offline.window_name)
-    hwnd = win32gui.FindWindow(None, cf_offline.window_name)
-    rect = win32gui.GetWindowRect(hwnd)
+    # hwnd = win32gui.FindWindow(None, cf_offline.window_name)
+    # rect = win32gui.GetWindowRect(hwnd)
+    rect = (300, 100, 1400, 600)
     # rect = [r * 1.5 for r in rect]
     img = ImageGrab.grab(bbox=(rect[0], rect[1], rect[2], rect[3]))
     frame = np.array(img)
@@ -328,9 +329,10 @@ def grab_screen(photo_name='test.png'):
 
 
 def click(x, y, offset=(0, 0)):
-    win32api.SetCursorPos((offset[0] + x, offset[1] + y))
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, offset[0] + x, offset[1] + y, 0, 0)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, offset[0] + x, offset[1] + y, 0, 0)
+    print("点击",x, y, offset)
+    # win32api.SetCursorPos((offset[0] + x, offset[1] + y))
+    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, offset[0] + x, offset[1] + y, 0, 0)
+    # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, offset[0] + x, offset[1] + y, 0, 0)
 
 
 def auto_starter(epoch=0):
@@ -366,16 +368,17 @@ def mean_score_logger(log_info):
 
 
 def get_game_window_rect():
+    print("获取窗口")
     window_name = cf_offline.window_name
 
-    def callback(h, extra):
-        if window_name in win32gui.GetWindowText(h):
-            extra.append(h)
-        return True
-    hwnds = []
-    win32gui.EnumWindows(callback, hwnds)
-    active_window = hwnds[0]
-    return get_window_rect(active_window)
+    # def callback(h, extra):
+    #     if window_name in win32gui.GetWindowText(h):
+    #         extra.append(h)
+    #     return True
+    # hwnds = []
+    # win32gui.EnumWindows(callback, hwnds)
+    # active_window = hwnds[0]
+    # return get_window_rect(active_window)
 
 
 def restart_game():

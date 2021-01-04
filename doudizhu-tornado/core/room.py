@@ -5,16 +5,18 @@ from core.table import Table
 
 logger = logging.getLogger('ddz')
 
-
+#有撮子还有房间
 class Room(object):
 
-    def __init__(self, uid, allow_robot=True):
+    def __init__(self, uid , allow_robot=True):
         self.uid = uid
+        # self.uidleft = luid
+        # self.uidright = ruid
         self.__waiting_tables = {}
         self.__playing_tables = {}
         self.allow_robot = allow_robot
         self.entrance_fee = 100
-        logger.info('ROOM[%d] CREATED', uid)
+        logger.info('ROOM[%d] CREATED创建房间 ', uid)
 
     def rsp_tables(self):
         rsp = []
@@ -35,6 +37,7 @@ class Room(object):
         return self.waiting_tables.get(uid)
 
     def on_table_changed(self, table):
+        # print("改变桌子房间状态 开始或者 等待")
         if table.is_full():
             self.waiting_tables.pop(table.uid, None)
             self.playing_tables[table.uid] = table
@@ -53,7 +56,7 @@ class Room(object):
 
 class RoomManager(object):
     __metaclass__ = Singleton
-
+    #初始化直接就是 有机器人room 和无机器人room
     __room_dict = {
         1: Room(1, True),
         2: Room(2, False),

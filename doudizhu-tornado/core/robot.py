@@ -23,9 +23,10 @@ logger = logging.getLogger('ddz')
 
 
 class AiPlayer(Player):
-    MCT_THRESH = 15
+    MCT_THRESH = 0
 
     def __init__(self, uid: int, username: str, player: Player):
+        print("能进入init")
         from handlers.loopback import LoopBackSocketHandler
         super().__init__(uid, username, LoopBackSocketHandler(self))
         self.room = player.room
@@ -46,7 +47,7 @@ class AiPlayer(Player):
         elif code == Pt.RSP_JOIN_TABLE:
             pass
         elif code == Pt.RSP_DEAL_POKER:
-            # print("机器人收到出牌消息 实际是叫分")
+            print("只有机器人会处理这个消息?,发牌后机器人收到第一个消息 机器人收到 先是叫分,然后出牌消息",packet,"手牌不处理了?")
             if self.uid == packet[1]:
                 print("轮到自己出牌")
                 self.auto_call_score()
@@ -154,8 +155,9 @@ class AiPlayer(Player):
             print(next_cnt)
             next_next_cnt = len(self.table.players[(self.seat + 2) % 3].hand_pokers)
             print(next_next_cnt)
-            print(self.table.players[(self.seat + 1) % 3].hand_pokers)
-            print(self.table.players[(self.seat + 2) % 3].hand_pokers)
+            print((self.seat + 1) % 3,self.table.players[(self.seat + 1) % 3].hand_pokers)
+            print((self.seat + 2) % 3,self.table.players[(self.seat + 2) % 3].hand_pokers)
+            print(self.table.players[(self.seat + 3) % 3].hand_pokers)
             next_state = remain_cards * (next_cnt / (next_cnt + next_next_cnt))
             next_next_state = remain_cards * (next_next_cnt / (next_cnt + next_next_cnt))
             prob_state = np.concatenate([next_state, next_next_state])

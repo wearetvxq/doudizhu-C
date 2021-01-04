@@ -18,14 +18,14 @@ class Protocol(IntEnum):
     REQ_JOIN_ROOM = 17
     RSP_JOIN_ROOM = 18
 
-    REQ_JOIN_TABLE = 19
+    REQ_JOIN_TABLE = 19  #  第一步先发19
     RSP_JOIN_TABLE = 20
 
     REQ_NEW_TABLE = 21
     RSP_NEW_TABLE = 22
 
     REQ_DEAL_POKER = 31
-    RSP_DEAL_POKER = 32
+    RSP_DEAL_POKER = 32  # 给他们牌的内容
 
     REQ_CALL_SCORE = 33
     RSP_CALL_SCORE = 34
